@@ -1,0 +1,188 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES (Para ambas páginas)
+   ========================================================================== */
+:root {
+  --fondo: #121214;         /* Gris oscuro moderno estilo modo noche */
+  --fondo-tarjeta: #1a1a1e; /* Gris un toque más claro para los bloques */
+  --texto: #f5f5f7;         /* Blanco suave para descansar la vista */
+  --principal: #ff4757;     /* Rojo vibrante estilo streaming/pochoclos */
+  --secundario: #ffa502;    /* Naranja/Amarillo para resaltar títulos */
+}
+
+/* PEGA ESTO EN SU REEMPLAZO: */
+
+ body {
+  /* CAMBIA ESTA URL por la imagen de fondo de anime que más te guste */
+  background-image: url('https://i.pinimg.com/1200x/64/2c/48/642c480b5f615b4212cecefc6835fa6b.jpg'); 
+  
+  /* Esto hace que la imagen tape toda la pantalla sin repetirse feo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Mantiene el fondo quieto mientras haces scroll */
+
+  color: var(--texto);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor que centra el contenido en la pantalla */
+main {
+  max-width: 700px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. TEXTOS, TÍTULOS Y REALTADOS
+   ========================================================================== */
+h1 {
+  text-align: center;
+  color: var(--principal);
+  font-size: 2.3rem;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid var(--principal);
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: var(--secundario);
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+p {
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Estilos para textos importantes y marcas */
+strong {
+  color: #fff;
+}
+
+mark {
+  background-color: var(--principal);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Enlace de "Volver al Menu Principal" (está dentro de un h2 suelto) */
+body > h2 a {
+  color: #aaa !important;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+body > h2 a:hover {
+  color: var(--secundario) !important;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   3. TARJETAS DE ANIME e IMÁGENES (Articles)
+   ========================================================================== */
+article {
+  background-color: var(--fondo-tarjeta);
+  padding: 25px;
+  margin-bottom: 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2f2f38;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse sobre la tarjeta */
+article:hover {
+  transform: translateY(-3px);
+}
+
+/* Hace que todas las imágenes sean responsivas y no rompan la pantalla */
+img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* ==========================================================================
+   4. BOTONES Y ENLACES (Transforma tus links sin tocar el HTML)
+   ========================================================================== */
+
+/* Esto selecciona los enlaces de ver temporadas o ver animes dentro de los articles */
+article p a, article > a {
+  background-color: var(--principal);
+  color: #ffffff !important; /* Fuerza el texto a blanco */
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 50px;       /* Forma de botón redondeado de streaming */
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none !important;
+  box-shadow: 0 6px 15px rgba(255, 71, 87, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Estado Hover: Cuando pasas el cursor por encima del botón */
+article p a:hover, article > a:hover {
+  background-color: #ff6b81; /* Rojo más brillante */
+  transform: scale(1.05);    /* Se agranda un poquito sutilmente */
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.5);
+}
+
+/* Estado Active: Cuando haces clic exactamente en el botón */
+article p a:active, article > a:active {
+  transform: scale(0.96);    /* Efecto de hundimiento de botón real */
+}
+
+/* ==========================================================================
+   5. TABLA DE POSICIONES (Tu Top 🔝)
+   ========================================================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #222227;
+  border-radius: 8px;
+  overflow: hidden; /* Para que los bordes redondeados se apliquen bien */
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--principal);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Color de fila intercalado (efecto cebra) */
+tbody tr:nth-child(even) {
+  background-color: #1a1a1e;
+}
+
+/* Resalta la fila de la tabla cuando pasas el mouse por encima */
+tbody tr:hover {
+  background-color: #2d2d35;
+}
+
+/* Apaga el color de las barras divisorias "/" en la tabla para que quede más limpio */
+td:nth-child(2), td:nth-child(4), th:nth-child(2), th:nth-child(4) {
+  color: #444;
+}
